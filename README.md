@@ -1,5 +1,11 @@
 # YACHAI Common
 
+[![CI/CD](https://github.com/TectopiaPeru/yachai-common/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/TectopiaPeru/yachai-common/actions)
+[![PyPI version](https://badge.fury.io/py/yachai-common.svg)](https://badge.fury.io/py/yachai-common)
+[![Python versions](https://img.shields.io/pypi/pyversions/yachai-common.svg)](https://pypi.org/project/yachai-common/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code coverage](https://codecov.io/gh/TectopiaPeru/yachai-common/branch/main/graph/badge.svg)](https://codecov.io/gh/TectopiaPeru/yachai-common)
+
 Paquete compartido de utilidades para proyectos YACHAI.
 
 ## Propósito

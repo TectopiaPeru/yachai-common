@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yachai-common"
+version = "1.0.0"
+description = "Shared utilities for YACHAI microservices"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "YACHAI Team", email = "dev@yachai.lat"}
+]
+keywords = ["cache", "security", "utilities", "microservices"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "redis>=5.0.0",
+    "cryptography>=3.4.8",
+    "email-validator>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.21.1",
+    "pytest-mock>=3.12.0",
+    "black>=23.12.0",
+    "isort>=5.13.0",
+    "flake8>=7.0.0",
+    "pre-commit>=3.5.0",
+    "build>=0.10.0",
+    "twine>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TectopiaPeru/yachai-common"
+Documentation = "https://github.com/TectopiaPeru/yachai-common#readme"
+Repository = "https://github.com/TectopiaPeru/yachai-common.git"
+Issues = "https://github.com/TectopiaPeru/yachai-common/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["yachai_common*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=yachai_common --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["yachai_common"]
+omit = ["*/tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]
